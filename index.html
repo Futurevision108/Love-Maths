@@ -25,24 +25,31 @@
         <div class="controls-area">
             <!-- button included for operations(+,-)-->
 
-            <button class="btn btn-big btn-green">
+            <button data-type="addition" class="btn btn--big btn--green">
                 <i class="fas fa-plus"></i>
             </button>
             
-            <button class="btn btn-big btn-blue">
+            <button data-type="subtract" class="btn btn--big btn--blue">
                 <i class="fas fa-minus"></i>
             </button>
             
-            <button class="btn btn-big btn-orange">
+            <button data-type="multiply" class="btn btn--big btn--orange">
                 <i class="fas fa-times"></i>
             </button>
             
-            <button class="btn btn-big btn-red">
+            <button data-type="division" class="btn btn--big btn--red">
                 <i class="fas fa-divide"></i>
             </button>
         </div>
 
-        <!-- operands and operator added-->
+        <!-- operands and operator added-->.btn--big::after{
+    content: attr(data-type);
+    font-size: 1rem;
+    color: #445361;
+    position: relative;
+    left: -0.5em;
+
+}
         <div class ="question-area">
             <span id="operand1">0</span>
             <span id="operator">x</span>
@@ -54,7 +61,7 @@
             <input id="answer-box" type="number">
          </div>
          <!-- box added to submit the anwer-->
-         <button class="btn btn-gray">Submit Answer</button>
+         <button data-type="submit" class="btn btn--gray">Submit Answer</button>
 
     </div>
 
